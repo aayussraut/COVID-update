@@ -56,9 +56,7 @@ class _HomePageState extends State<HomePage> {
       var todayCase=decodedData['todayCases'];
       var cricitalCase=decodedData['critical'];
       var todayDeathCase=decodedData['todayDeaths'];
-//      var data2 = await CovidData().getCovidActiveCaseData(countryName);
-//      var data3 = await CovidData().getCovidRecoveredCaseData(countryName);
-//      var data4 = await CovidData().getCovidClosedCaseData(countryName);
+
 
       setState((){
         todayDeathNumber=todayDeathCase.toStringAsFixed(0);
