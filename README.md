@@ -1,6 +1,8 @@
+#  Code is not so userfriendly
 # corona_update
 
 Corona Update App
+
 
 
 ## Packages used :
