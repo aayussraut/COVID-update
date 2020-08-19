@@ -102,44 +102,6 @@ class _HomePageState extends State<HomePage> {
 
           Dropdown(),
 
-//          IconButton(
-//            icon: cusIcon,
-//            onPressed: (){
-//              setState(() {
-//                  if(this.cusIcon.icon==Icons.search)
-//                    {
-//                      this.cusIcon=Icon(Icons.cancel);
-//                      this.cusSearchBar=TextField(
-//                        decoration: InputDecoration(
-//                          border: InputBorder.none,
-//                          hintText: 'Country',
-//                          hintStyle: TextStyle(
-//                            color: Colors.white,
-//                            fontSize: 16.0
-//                          )
-//
-//                        ),
-//                        textInputAction: TextInputAction.go,
-//                        style: TextStyle(
-//                          color: Colors.white,
-//                          fontSize: 16.0,
-//
-//                        ),
-//                        onChanged: (value){
-//                           setState(() {
-//                             countryName=value;
-//                           });
-//
-//                        },
-//                      );
-//                    }
-//                  else{
-//                    this.cusIcon=Icon(Icons.search);
-//                    this.cusSearchBar=null;
-//                  }
-//              });
-//            },
-//          )
 
         ],
 
