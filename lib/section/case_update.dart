@@ -3,8 +3,13 @@ import 'package:flutter/material.dart';
 import 'package:corona_update/constant.dart';
 
 class CaseUpdate extends StatelessWidget {
-
-  CaseUpdate({this.name,this.number,this.name2,this.number2,this.name3,this.number3});
+  CaseUpdate(
+      {this.name,
+      this.number,
+      this.name2,
+      this.number2,
+      this.name3,
+      this.number3});
   final String name;
   final String number;
   final String name2;
@@ -15,7 +20,7 @@ class CaseUpdate extends StatelessWidget {
   Widget build(BuildContext context) {
     return Expanded(
       child: Padding(
-        padding: const EdgeInsets.symmetric(vertical: 5.0,horizontal: 20.0),
+        padding: const EdgeInsets.symmetric(vertical: 5.0, horizontal: 20.0),
         child: Container(
           decoration: kContainerBoxDecoration,
           child: Row(
@@ -25,19 +30,23 @@ class CaseUpdate extends StatelessWidget {
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Text(name,
+                    Text(
+                      name,
                       style: TextStyle(
                         color: kSmallTextColor,
-                        fontSize: 15,fontWeight: FontWeight.w700,
-                      ),),
+                        fontSize: 15,
+                        fontWeight: FontWeight.w700,
+                      ),
+                    ),
                     SizedBox(
                       height: 5.0,
                     ),
-                    Text(number,
+                    Text(
+                      number,
                       style: TextStyle(
                         fontSize: 25,
-
-                      ),)
+                      ),
+                    )
                   ],
                 ),
               ),
@@ -47,25 +56,34 @@ class CaseUpdate extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
-                    Text(number2,style: TextStyle(fontSize: 20),),
-                    Text(name2,style: TextStyle(
-                      color: kSmallTextColor,
-                      fontSize: 15,
-                      fontWeight: FontWeight.w700,
+                    Text(
+                      number2,
+                      style: TextStyle(fontSize: 20),
                     ),
-                    textAlign: TextAlign.center,),
-
+                    Text(
+                      name2,
+                      style: TextStyle(
+                        color: kSmallTextColor,
+                        fontSize: 15,
+                        fontWeight: FontWeight.w700,
+                      ),
+                      textAlign: TextAlign.center,
+                    ),
                     SizedBox(
                       height: 10,
                     ),
-                    Text(number3,style: TextStyle(fontSize: 20),),
-                    Text(name3,style: TextStyle(
-                      color: kSmallTextColor,
-                      fontSize: 15,
-                      fontWeight: FontWeight.w700,
-                    ),),
-
-
+                    Text(
+                      number3,
+                      style: TextStyle(fontSize: 20),
+                    ),
+                    Text(
+                      name3,
+                      style: TextStyle(
+                        color: kSmallTextColor,
+                        fontSize: 15,
+                        fontWeight: FontWeight.w700,
+                      ),
+                    ),
                   ],
                 ),
               ),
@@ -76,5 +94,3 @@ class CaseUpdate extends StatelessWidget {
     );
   }
 }
-
-

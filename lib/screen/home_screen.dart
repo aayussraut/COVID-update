@@ -13,27 +13,36 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-
-  Map<String,String> coronaData = {};
-  String activeCaseNumber,closedCaseNumber,deathNumber,recoveredNumber,todayCaseNumber,criticalNumber,todayDeathNumber,todayRecoveredNUmber;
-  String countryName="Nepal";
+  Map<String, String> coronaData = {};
+  String activeCaseNumber,
+      closedCaseNumber,
+      deathNumber,
+      recoveredNumber,
+      todayCaseNumber,
+      criticalNumber,
+      todayDeathNumber,
+      todayRecoveredNUmber;
+  String countryName = "Nepal";
 
   SearchableDropdown<String> Dropdown() {
     List<DropdownMenuItem<String>> dropdownItems = [];
     for (String country in countryList) {
       var newItem = DropdownMenuItem(
-        child: Text(country,
-          style: TextStyle(color: Colors.white,
-            backgroundColor: Colors.redAccent,
-        ),),
+        child: Text(
+          country,
+
+        ),
         value: country,
       );
       dropdownItems.add(newItem);
     }
 
     return SearchableDropdown<String>(
-
-      icon: Icon(Icons.arrow_drop_down,color: Colors.white,),
+      style: TextStyle(color: Colors.white),
+      icon: Icon(
+        Icons.arrow_drop_down,
+        color: Colors.white,
+      ),
       value: countryName,
       items: dropdownItems,
       onChanged: (value) {
@@ -47,28 +56,25 @@ class _HomePageState extends State<HomePage> {
 
   Future getNumber() async {
     try {
-      var decodedData=await CovidData().getCovidDeathData(countryName);
+      var decodedData = await CovidData().getCovidDeathData(countryName);
       var death = decodedData['deaths'];
       print(death);
       var activeCase = decodedData['active'];
       var recovered = decodedData['recovered'];
       var todayRecoveredCase = decodedData['todayRecovered'];
-      var todayCase=decodedData['todayCases'];
-      var cricitalCase=decodedData['critical'];
-      var todayDeathCase=decodedData['todayDeaths'];
-//      var data2 = await CovidData().getCovidActiveCaseData(countryName);
-//      var data3 = await CovidData().getCovidRecoveredCaseData(countryName);
-//      var data4 = await CovidData().getCovidClosedCaseData(countryName);
+      var todayCase = decodedData['todayCases'];
+      var cricitalCase = decodedData['critical'];
+      var todayDeathCase = decodedData['todayDeaths'];
 
-      setState((){
-        todayDeathNumber=todayDeathCase.toStringAsFixed(0);
-        todayRecoveredNUmber=todayRecoveredCase.toStringAsFixed(0);
-        todayCaseNumber=todayCase.toStringAsFixed(0);
-        criticalNumber=cricitalCase.toStringAsFixed(0);
-        activeCaseNumber=activeCase.toStringAsFixed(0);
-        recoveredNumber=recovered.toStringAsFixed(0);
-        deathNumber=death.toStringAsFixed(0);
-        closedCaseNumber=(recovered+death).toStringAsFixed(0);
+      setState(() {
+        todayDeathNumber = todayDeathCase.toStringAsFixed(0);
+        todayRecoveredNUmber = todayRecoveredCase.toStringAsFixed(0);
+        todayCaseNumber = todayCase.toStringAsFixed(0);
+        criticalNumber = cricitalCase.toStringAsFixed(0);
+        activeCaseNumber = activeCase.toStringAsFixed(0);
+        recoveredNumber = recovered.toStringAsFixed(0);
+        deathNumber = death.toStringAsFixed(0);
+        closedCaseNumber = (recovered + death).toStringAsFixed(0);
         print(deathNumber);
         print(closedCaseNumber);
       });
@@ -77,21 +83,19 @@ class _HomePageState extends State<HomePage> {
     }
   }
 
-
-
-
   @override
   void initState() {
     super.initState();
 
     getNumber();
   }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+
       backgroundColor: Color(0xffF2F6F9),
       appBar: AppBar(
-
         elevation: 0,
         backgroundColor: Color(0xffFD5A51),
         leading: Icon(
@@ -99,51 +103,8 @@ class _HomePageState extends State<HomePage> {
           color: kRedContainerColor,
         ),
         actions: [
-
           Dropdown(),
-
-//          IconButton(
-//            icon: cusIcon,
-//            onPressed: (){
-//              setState(() {
-//                  if(this.cusIcon.icon==Icons.search)
-//                    {
-//                      this.cusIcon=Icon(Icons.cancel);
-//                      this.cusSearchBar=TextField(
-//                        decoration: InputDecoration(
-//                          border: InputBorder.none,
-//                          hintText: 'Country',
-//                          hintStyle: TextStyle(
-//                            color: Colors.white,
-//                            fontSize: 16.0
-//                          )
-//
-//                        ),
-//                        textInputAction: TextInputAction.go,
-//                        style: TextStyle(
-//                          color: Colors.white,
-//                          fontSize: 16.0,
-//
-//                        ),
-//                        onChanged: (value){
-//                           setState(() {
-//                             countryName=value;
-//                           });
-//
-//                        },
-//                      );
-//                    }
-//                  else{
-//                    this.cusIcon=Icon(Icons.search);
-//                    this.cusSearchBar=null;
-//                  }
-//              });
-//            },
-//          )
-
         ],
-
-
       ),
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -177,27 +138,34 @@ class _HomePageState extends State<HomePage> {
               ],
             ),
           ),
-          SizedBox(height: 10.0,),
+          SizedBox(
+            height: 10.0,
+          ),
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Padding(
                 padding: EdgeInsets.only(left: 20.0),
-                child: Text('Symptoms',
-                style: TextStyle(
-                  fontSize: 15,
-                  fontWeight: FontWeight.w700,
-                ),),
+                child: Text(
+                  'Symptoms',
+                  style: TextStyle(
+                    fontSize: 15,
+                    fontWeight: FontWeight.w700,
+                  ),
+                ),
               ),
               Row(
                 children: [
-                  ImagePart(imageName: 'Cough',),
-                  ImagePart(imageName: 'Headache',),
-                  ImagePart(imageName: 'Fever',),
-
-
+                  ImagePart(
+                    imageName: 'Cough',
+                  ),
+                  ImagePart(
+                    imageName: 'Headache',
+                  ),
+                  ImagePart(
+                    imageName: 'Fever',
+                  ),
                 ],
-
               ),
             ],
           ),
@@ -205,7 +173,6 @@ class _HomePageState extends State<HomePage> {
             padding: EdgeInsets.all(20.0),
             child: Row(
               children: [
-
                 RowSection(
                   count: deathNumber,
                   title: 'Deaths',
@@ -220,11 +187,24 @@ class _HomePageState extends State<HomePage> {
               ],
             ),
           ),
-          CaseUpdate(name: 'Active Cases',number: activeCaseNumber,name2: 'Today Cases',name3: 'Today Death',number2: todayCaseNumber,number3: todayDeathNumber,),
-          CaseUpdate(name: 'Closed Cases',number: closedCaseNumber,name2: 'Today Recovered',name3: 'Critical',number3: criticalNumber,number2: todayRecoveredNUmber,),
+          CaseUpdate(
+            name: 'Active Cases',
+            number: activeCaseNumber,
+            name2: 'Today Cases',
+            name3: 'Today Death',
+            number2: todayCaseNumber,
+            number3: todayDeathNumber,
+          ),
+          CaseUpdate(
+            name: 'Closed Cases',
+            number: closedCaseNumber,
+            name2: 'Today Recovered',
+            name3: 'Critical',
+            number3: criticalNumber,
+            number2: todayRecoveredNUmber,
+          ),
         ],
       ),
     );
   }
 }
-
