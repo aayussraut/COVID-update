@@ -62,6 +62,7 @@ class _HomePageState extends State<HomePage> {
       var activeCase = decodedData['active'];
       var recovered = decodedData['recovered'];
       var todayRecoveredCase = decodedData['todayRecovered'];
+
       var todayCase = decodedData['todayCases'];
       var cricitalCase = decodedData['critical'];
       var todayDeathCase = decodedData['todayDeaths'];
@@ -75,6 +76,7 @@ class _HomePageState extends State<HomePage> {
         recoveredNumber = recovered.toStringAsFixed(0);
         deathNumber = death.toStringAsFixed(0);
         closedCaseNumber = (recovered + death).toStringAsFixed(0);
+=======
         print(deathNumber);
         print(closedCaseNumber);
       });

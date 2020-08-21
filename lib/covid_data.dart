@@ -8,7 +8,6 @@ class CovidData {
 
   Future getCovidDeathData(String selectedCountry) async {
     print(selectedCountry);
-
     Response response = await get(
         'https://disease.sh/v3/covid-19/countries/$selectedCountry?strict=true');
     String data = response.body;
