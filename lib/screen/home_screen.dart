@@ -76,7 +76,7 @@ class _HomePageState extends State<HomePage> {
         recoveredNumber = recovered.toStringAsFixed(0);
         deathNumber = death.toStringAsFixed(0);
         closedCaseNumber = (recovered + death).toStringAsFixed(0);
-=======
+
         print(deathNumber);
         print(closedCaseNumber);
       });
