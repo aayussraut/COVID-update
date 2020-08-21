@@ -2,10 +2,8 @@ import 'package:corona_update/constant.dart';
 import 'package:flutter/material.dart';
 
 class ImagePart extends StatelessWidget {
-
   final String imageName;
   ImagePart({this.imageName});
-
 
   @override
   Widget build(BuildContext context) {
@@ -18,11 +16,10 @@ class ImagePart extends StatelessWidget {
           child: Column(
             children: [
               Image.asset('images/$imageName.png'),
-              Text(imageName,
-                style: TextStyle(
-                    fontSize: 15,
-                    fontWeight: FontWeight.w400
-                ),),
+              Text(
+                imageName,
+                style: TextStyle(fontSize: 15, fontWeight: FontWeight.w400),
+              ),
             ],
           ),
         ),
